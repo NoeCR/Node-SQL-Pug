@@ -1,0 +1,16 @@
+extends layout
+include mixins/formulario
+    
+
+
+block contenido
+    .contenido-principal
+        h1 #{tituloPagina}
+
+        pre= vardump(proyecto)
+        if errores
+            each error in errores
+                .alerta= error.texto
+        +formularioProyecto(proyecto)
+
+       
